@@ -1,3 +1,4 @@
+
 abstract class Connectable {
   void connecter(String utilisateur);
 
@@ -25,5 +26,19 @@ class BaseDeDonnees implements Connectable {
   @override
   void deconnecter() {
     print("BaseDeDonnees : Déconnexion réussie.");
+  }
+}
+
+void main() {
+  var serveur = ServeurAPI();
+  var baseDeDonnees = BaseDeDonnees();
+
+  List<Connectable> services = [];
+  services.add(serveur);
+  services.add(baseDeDonnees);
+
+  for (Connectable service in services) {
+    service.connecter("Aniss");
+    service.deconnecter();
   }
 }
