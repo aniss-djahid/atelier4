@@ -1,10 +1,11 @@
+
 class Couleur {
   final int r;
   final int g;
   final int b;
 
   Couleur(this.r, this.g, this.b);
-}
+
   Couleur.rouge()
       : r = 255,
         g = 0,
@@ -20,6 +21,17 @@ class Couleur {
         g = 0,
         b = 255;
 
-    void afficherCouleur() {
-  print("(R : $r, V : $g, B : $b)");
+  void afficherCouleur() {
+    print("(R : $r, V : $g, B : $b)");
+  }
+}
+
+void main() {
+  Couleur rouge = Couleur.rouge();
+  Couleur vert = Couleur.vert();
+  Couleur bleu = Couleur.bleu();
+
+  rouge.afficherCouleur();
+  vert.afficherCouleur();
+  bleu.afficherCouleur();
 }
