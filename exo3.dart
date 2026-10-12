@@ -13,3 +13,10 @@ class Compte {
     }
   }
 }
+void main() {
+  var compte = Compte("CA123");
+
+  compte.depot(150.0);
+
+  print("Solde du compte : ${compte.solde}");
+}
