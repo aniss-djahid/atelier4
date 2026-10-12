@@ -1,3 +1,4 @@
+
 class Media {
   final String titre;
 
@@ -26,6 +27,22 @@ class Film extends Media {
 
   @override
   void afficherType() {
-    print("Ceci est un Film : $titre, durée : $dureeMinutes minutes.");
-    }
+    print(
+      "Ceci est un Film : $titre, durée : $dureeMinutes minutes.",
+    );
+  }
+}
+
+void main() {
+  List<Media> catalogue = [];
+
+  catalogue.add(Livre("power", "Aniss"));
+  catalogue.add(Livre("Art", "djahid"));
+
+  catalogue.add(Film("fast&furious", 190));
+  catalogue.add(Film("Love", 160));
+
+  for (Media media in catalogue) {
+    media.afficherType();
+  }
 }
