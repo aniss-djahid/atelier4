@@ -21,6 +21,17 @@ class Livre {
   }
 }
 
+class Roman extends Livre {
+  String genre;
+
+  Roman(String titre, String auteur, this.genre)
+      : super(titre, auteur);
+
+  void afficherInfosRoman() {
+    print("Titre: $titre, Auteur: $auteur, Genre: $genre");
+  }
+}
+
 void main() {
   var livre1 = Livre("power", "aniss");
   var livre2 = Livre("seduction", "djahid");
@@ -30,7 +41,29 @@ void main() {
   livre2.afficherInfos();
   livre3.afficherInfos();
 
-  print("Nombre de pages de  ${livre1.titre} : ${livre1.pages}");
+  print("Nombre de pages de ${livre1.titre} : ${livre1.pages}");
+
+  var roman1 = Roman(
+    "Le Crime de l'Orient-Express",
+    "aniss",
+    "Policier",
+  );
+
+  var roman2 = Roman(
+    "Dune",
+    "djahid",
+    "Science-fiction",
+  );
+
+  var roman3 = Roman(
+    "Les Misérables",
+    "chellat",
+    "Historique",
+  );
+
+  roman1.afficherInfosRoman();
+  roman2.afficherInfosRoman();
+  roman3.afficherInfosRoman();
 
   Livre.afficherTotalLivres();
 }
